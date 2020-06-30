@@ -1,5 +1,8 @@
 # go-winjob
 [![GoDoc](https://godoc.org/github.com/kolesnikovae/go-winjob?status.svg)](https://godoc.org/github.com/kolesnikovae/go-winjob/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kolesnikovae/go-winjob)](https://goreportcard.com/report/github.com/kolesnikovae/go-winjob)
+[![Build status](https://ci.appveyor.com/api/projects/status/yim6v5uws84x8ip6/branch/master?svg=true)](https://ci.appveyor.com/project/kolesnikovae/go-winjob/branch/master)
+[![CodeCov](https://codecov.io/gh/kolesnikovae/go-winjob/branch/master/graph/badge.svg)](https://codecov.io/gh/kolesnikovae/go-winjob)
 
 Go bindings for [Windows Job Objects](https://docs.microsoft.com/en-us/windows/win32/procthread/job-objects):
 > A job object allows groups of processes to be managed as a unit. Job objects are namable, securable, sharable objects that control attributes of the processes associated with them. Operations performed on a job object affect all processes associated with the job object. Examples include enforcing limits such as working set size and process priority or terminating all processes associated with a job.
