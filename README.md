@@ -7,7 +7,7 @@
 Go bindings for [Windows Job Objects](https://docs.microsoft.com/en-us/windows/win32/procthread/job-objects):
 > A job object allows groups of processes to be managed as a unit. Job objects are namable, securable, sharable objects that control attributes of the processes associated with them. Operations performed on a job object affect all processes associated with the job object. Examples include enforcing limits such as working set size and process priority or terminating all processes associated with a job.
 
-The package aims to provide means to manage windows jobs. **jobapi** sub-package holds supplemental types and functions for low-level interactions with the operating system.
+The package provides means to manage windows jobs. **jobapi** sub-package holds supplemental types and functions for low-level interactions with the operating system.
 
 ## Installation
 
@@ -36,7 +36,7 @@ if err := cmd.Wait(); err != nil {
 }
 ```
 
-`LimitKillOnJobClose` acts similar to `prctl(PR_SET_PDEATHSIG, SIGKILL)` in Linux: the job is destroyed when its last handle has been closed and all associated processes have been terminated. However, if the job has the `LimitKillOnJobClose`, closing the last job object handle terminates all associated processes and then destroys the job object itself.
+`LimitKillOnJobClose` acts similarly to `prctl(PR_SET_PDEATHSIG, SIGKILL)` in Linux: the job is destroyed when its last handle has been closed and all associated processes have been terminated. However, if the job has the `LimitKillOnJobClose`, closing the last job object handle terminates all associated processes and then destroys the job object itself.
 
 The same result can be achieved by manual assignment:
 <details>
@@ -128,13 +128,13 @@ if err != nil {
 }
 
 go func() {
-	defer s.Close()
+    defer s.Close()
     for {
         select {
         case <-ctx.Done():
             return
         case n := <-c:
-        	switch n.Type {
+            switch n.Type {
             case winjob.NotificationNewProcess:
             	// ...
             case winjob.NotificationExitProcess:

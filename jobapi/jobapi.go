@@ -72,7 +72,7 @@ const (
 	PROCESS_MODE_BACKGROUND_END   PriorityClass = 0x00200000
 )
 
-// JobObjectInformationClass is a information class for the limits to be set or queried.
+// JobObjectInformationClass is an information class for the limits to be set or queried.
 //
 // https://docs.microsoft.com/en-us/windows/desktop/api/jobapi2/nf-jobapi2-setinformationjobobject
 // https://docs.microsoft.com/en-us/windows/desktop/api/jobapi2/nf-jobapi2-queryinformationjobobject
